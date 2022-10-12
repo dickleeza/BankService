@@ -1,0 +1,6 @@
+<Settings>
+  <ConnectionString>
+   <Value>Data Source=MEEK-PC;Initial Catalog=BANKSERVICE;uid=sa1;pwd=mahavira</Value>
+   <pathdir>D:\XMLFileFromSyspro</pathdir>
+  </ConnectionString>
+</Settings>

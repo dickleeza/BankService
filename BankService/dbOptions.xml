@@ -1,0 +1,5 @@
+<Settings>
+  <ConnectionString>
+   <Value>Data Source=MEEK-PC;Initial Catalog=BANKSERVICE;uid=sa;pwd=mahavira</Value>
+  </ConnectionString>
+</Settings>
