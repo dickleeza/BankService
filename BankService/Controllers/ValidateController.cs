@@ -27,7 +27,7 @@ namespace BankService.Controllers
                 {
                     var MessageOut = new
                     {
-                        StatusCode = 0,
+                        StatusCode = 400,
                         Message = "Empty or invalid request",
                     };
                     return Ok(MessageOut);

@@ -25,7 +25,7 @@ namespace BankService.Controllers
                 {
                     var MessageOut = new
                     {
-                        StatusCode = 0,
+                        StatusCode = 400,
                         Message = "Empty or invalid request",
                     };
                     return Ok(MessageOut);
@@ -46,14 +46,14 @@ namespace BankService.Controllers
                     {
                         var MessageOut1 = new
                         {
-                            StatusCode = 0,
+                            StatusCode = 402,
                             Message = "Payment Advice with Transaction Reference Code " + ObjVal.TransactionRefCode + " already exists",
                         };
                         return Ok(MessageOut1);
                     }
                     else
                     {
-
+                        //Add the payment Advice details
                         Connection.openconnection();
                         cmd = new SqlCommand("INSERT INTO FBankTransactions(TransReferenceCode,TransactionDate,Currency,DocumentRefNo,PaymentDate,PaymentCode,PaymentMode,PaymentAmount,AdditionalInfo,AccountNumber,AccountName,InstitutionCode,InstitutionName,BankCode,BranchCode,IPAddress,serviceName,messageID) " +
                                             "VALUES(@transreferencecode, @transactiondate, @currency, @documentrefno, @paymentdate, @paymentcode, @paymentmode, @paymentamount, @additionalinfo, @accountnumber, @accountname, @institutioncode, @institutionname, @bankcode, @branchcode, @ipaddress, @servicename, @messageid)", Connection.con);
@@ -90,7 +90,7 @@ namespace BankService.Controllers
                         {
                             var MessageOut = new
                             {
-                                StatusCode = 503,
+                                StatusCode = 405,
                                 Message = "An Error occourred while trying to post Post the Payment Advice, Try agian later",
                             };
                             return Ok(MessageOut);
